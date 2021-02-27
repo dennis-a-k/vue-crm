@@ -19,13 +19,13 @@ Vue.use(Vuelidate)
 Vue.filter('date', dateFilter)
 
 firebase.initializeApp({
-  apiKey: 'AIzaSyBXY7_pkzuqs3QNEVmnoEFmD3rRoJJs_Gc',
-  authDomain: 'vue-crm-52603.firebaseapp.com',
-  projectId: 'vue-crm-52603',
-  storageBucket: 'vue-crm-52603.appspot.com',
-  messagingSenderId: '978576249005',
-  appId: '1:978576249005:web:354a508d2a23cfa14f7624',
-  measurementId: 'G-XFXHXR6L1Z'
+  apiKey: 'AIzaSyCnkW1j3Q6le6eJmW8yw-uMHG5Tfg6n8cM',
+  authDomain: 'vue-crm-6145b.firebaseapp.com',
+  projectId: 'vue-crm-6145b',
+  storageBucket: 'vue-crm-6145b.appspot.com',
+  messagingSenderId: '844032191835',
+  appId: '1:844032191835:web:ec5a49504eb06eb5617e7e',
+  measurementId: 'G-XRVXQ4C8MZ'
 })
 
 let app
