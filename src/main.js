@@ -8,6 +8,7 @@ import dateFilter from './filters/date.filter'
 import currencyFilter from './filters/currency.filter'
 import messagePlugin from './utils/message.plugin'
 import Loader from './components/app/Loader'
+import TooltipDirective from './directives/toollip.directive'
 import 'materialize-css/dist/js/materialize.min'
 
 import firebase from 'firebase/app'
@@ -21,6 +22,7 @@ Vue.use(Vuelidate)
 Vue.filter('date', dateFilter)
 Vue.filter('currency', currencyFilter)
 Vue.component('Loader', Loader)
+Vue.directive('tooltip', TooltipDirective)
 
 firebase.initializeApp({
   apiKey: 'AIzaSyCnkW1j3Q6le6eJmW8yw-uMHG5Tfg6n8cM',

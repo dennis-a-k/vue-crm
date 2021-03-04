@@ -1,11 +1,11 @@
-import firebace from 'firebase/app'
+import firebase from 'firebase/app'
 
 export default {
   actions: {
     async fetchCategories ({ commit, dispatch }) {
       try {
         const uid = await dispatch('getUid')
-        const categories = (await firebace.database().ref(`/users/${uid}/categories`).once('value')).val() || {}
+        const categories = (await firebase.database().ref(`/users/${uid}/categories`).once('value')).val() || {}
         // const cats = []
         // Object.keys(categories).forEach(key => {
         //   cats.push({
@@ -25,7 +25,7 @@ export default {
     async updateCurrent ({ commit, dispatch }, { title, limit, id }) {
       try {
         const uid = await dispatch('getUid')
-        await firebace.database().ref(`/users/${uid}/categories`).child(id).update({ title, limit })
+        await firebase.database().ref(`/users/${uid}/categories`).child(id).update({ title, limit })
       } catch (e) {
         commit('setError', e)
         throw e
@@ -34,7 +34,7 @@ export default {
     async createCategory ({ commit, dispatch }, { title, limit }) {
       try {
         const uid = await dispatch('getUid')
-        const category = await firebace.database().ref(`/users/${uid}/categories`).push({ title, limit })
+        const category = await firebase.database().ref(`/users/${uid}/categories`).push({ title, limit })
         return { title, limit, id: category.key }
       } catch (e) {
         commit('setError', e)
