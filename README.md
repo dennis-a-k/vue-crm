@@ -20,5 +20,5 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Проект на Firebase
+See [Configuration Reference](https://vue-crm-6145b.web.app/).
