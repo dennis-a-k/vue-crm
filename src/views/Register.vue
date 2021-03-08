@@ -1,7 +1,7 @@
 <template>
   <form class="card auth-card"  @submit.prevent="submitHeandler">
     <div class="card-content">
-      <span class="card-title">Домашняя бухгалтерия</span>
+      <span class="card-title">{{ 'CRM_Title' | localize }}</span>
       <div class="input-field">
         <input
           id="email"
@@ -14,13 +14,13 @@
           class="helper-text invalid"
           v-if="$v.email.$dirty && !$v.email.required"
         >
-          Поле Email не должно быть пустым
+          {{ 'Message_EmailRequired' | localize }}
         </small>
         <small
           class="helper-text invalid"
           v-else-if="$v.email.$dirty && !$v.email.email"
         >
-          Введите корректный Email
+          {{ 'Message_EmailValid' | localize }}
         </small>
       </div>
       <div class="input-field">
@@ -30,12 +30,12 @@
           v-model.trim="password"
           :class="{ invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength ) }"
         >
-        <label for="password">Пароль</label>
+        <label for="password">{{ 'Password' | localize }}</label>
         <small
           class="helper-text invalid"
           v-if="$v.password.$dirty && !$v.password.required"
         >
-          Введите пароль
+          {{ 'Message_EnterPassword' | localize }}
         </small>
         <small
           class="helper-text invalid"
@@ -51,18 +51,18 @@
           v-model.trim="name"
           :class="{ invalid: $v.name.$dirty && !$v.name.required }"
         >
-        <label for="name">Имя</label>
+        <label for="name">{{ 'Name' | localize }}</label>
         <small
           class="helper-text invalid"
           v-if="$v.name.$dirty && !$v.name.required"
         >
-         Введите ваше имя
+          {{ 'Message_EnterName' | localize }}
         </small>
       </div>
       <p>
         <label>
           <input type="checkbox" v-model="agree" />
-          <span>С правилами согласен</span>
+          <span>{{ 'AcceptRules' | localize }}</span>
         </label>
       </p>
     </div>
@@ -72,14 +72,14 @@
           class="btn waves-effect waves-light auth-submit"
           type="submit"
         >
-          Зарегистрироваться
+          {{ 'Register' | localize }}
           <i class="material-icons right">send</i>
         </button>
       </div>
 
       <p class="center">
-        Уже есть аккаунт?
-        <router-link to="/login">Войти!</router-link>
+        {{ 'HasAccount' | localize }}?
+        <router-link to="/login">{{ 'Login' | localize }}!</router-link>
       </p>
     </div>
   </form>
